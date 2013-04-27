@@ -4,11 +4,7 @@
   "main": "./index",
   "version": "0.0.1",
   "maintainers": [
-    {
-      "name": "Arpad Borsos",
-      "email": "arpad.borsos@googlemail.com",
-      "web": "http://swatinem.de"
-    }
+    "Arpad Borsos <arpad.borsos@googlemail.com> (http://swatinem.de)"
   ],
   "dependencies": {
   },
@@ -18,5 +14,6 @@
   },
   "scripts": {
     "test": "./node_modules/.bin/mocha -r should"
-  }
+  },
+  "license": "GPLv3"
 }
