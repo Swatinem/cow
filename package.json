@@ -10,10 +10,13 @@
   },
   "devDependencies": {
     "mocha": "*",
-    "should": "*"
+    "should": "*",
+    "jscoverage": "*",
+    "coveralls": "*",
+    "mocha-lcov-reporter": "*"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha -r should"
+    "test": "make test-coveralls"
   },
   "license": "GPLv3"
 }

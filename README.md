@@ -2,6 +2,10 @@
 
 copy on write deep, cyclic js objects
 
+[![Build Status](https://travis-ci.org/Swatinem/cow.png?branch=master)](https://travis-ci.org/Swatinem/cow)
+[![Coverage Status](https://coveralls.io/repos/Swatinem/cow/badge.png?branch=master)](https://coveralls.io/r/Swatinem/cow)
+[![Dependency Status](https://gemnasium.com/Swatinem/cow.png)](https://gemnasium.com/Swatinem/cow)
+
 ## Installation
 
     $ npm install cow
