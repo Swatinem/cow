@@ -1,0 +1,22 @@
+{
+  "name": "cow",
+  "description": "copy on write deep, cyclic js objects",
+  "main": "./index",
+  "version": "0.0.1",
+  "maintainers": [
+    {
+      "name": "Arpad Borsos",
+      "email": "arpad.borsos@googlemail.com",
+      "web": "http://swatinem.de"
+    }
+  ],
+  "dependencies": {
+  },
+  "devDependencies": {
+    "mocha": "*",
+    "should": "*"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha -r should"
+  }
+}
