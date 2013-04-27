@@ -3,3 +3,6 @@ lib-cov
 coverage.html
 npm-debug.log
 *.tgz
+test
+Makefile
+.travis.yml

@@ -1,8 +1,9 @@
 {
   "name": "cow",
   "description": "copy on write deep, cyclic js objects",
+  "keywords": ["cow", "copy on write", "copy-on-write", "copy"],
   "main": "./index",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "maintainers": [
     "Arpad Borsos <arpad.borsos@googlemail.com> (http://swatinem.de)"
   ],
@@ -18,5 +19,6 @@
   "scripts": {
     "test": "make test-coveralls"
   },
+  "repository": "git://github.com/Swatinem/cow.git",
   "license": "GPLv3"
 }
