@@ -23,5 +23,5 @@ hidden/accessor properties.
 
 ## License
 
-  GPLv3
+  LGPLv3
 
