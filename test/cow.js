@@ -137,4 +137,26 @@ describe('Cow', function () {
 		f.child.new.should.equal(f.child);
 		f.child.new2.child.should.equal(f.child);
 	});
+	it('should not proxy inherited properties', function () {
+		function T() {}
+		function T2() {}
+		T.prototype = Object.create(T2.prototype);
+		T2.prototype.method = function T2_method() {};
+		var o = new T;
+		o.method.should.equal(T2.prototype.method);
+		var c = new Cow(o);
+		var p = c.proxy;
+		p.method.should.equal(T2.prototype.method);
+		p.should.be.an.instanceof.T2;
+	});
+	it('should not choke on special property names', function () {
+		function T() {}
+		T.prototype.toString = function T_toString() {
+			return 'foo';
+		};
+		var o = new T;
+		var c = new Cow(o);
+		var p = c.proxy;
+		p.toString().should.equal('foo');
+	});
 });
