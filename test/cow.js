@@ -131,6 +131,7 @@ describe('Cow', function () {
 		var p = c.proxy;
 		p.child.new = p.child;
 		p.child.new2 = {child: p.child, child2: {}};
+		p.child.new2.child2.child2 = p.child.new2.child2;
 		var f = c.finish();
 		f.child.should.not.equal(o.child);
 		f.child.new.should.equal(f.child);

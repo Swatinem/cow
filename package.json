@@ -3,7 +3,7 @@
   "description": "copy on write deep, cyclic js objects",
   "keywords": ["cow", "copy on write", "copy-on-write", "copy"],
   "main": "./index",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "maintainers": [
     "Arpad Borsos <arpad.borsos@googlemail.com> (http://swatinem.de)"
   ],
