@@ -1,6 +1,7 @@
-# cow
+# Cow
 
-copy on write deep, cyclic js objects
+Cow provides a completely transparent copy on write proxy to deep, cyclic
+js objects.
 
 [![Build Status](https://travis-ci.org/Swatinem/cow.png?branch=master)](https://travis-ci.org/Swatinem/cow)
 [![Coverage Status](https://coveralls.io/repos/Swatinem/cow/badge.png?branch=master)](https://coveralls.io/r/Swatinem/cow)
@@ -12,22 +13,33 @@ copy on write deep, cyclic js objects
 
 ## usage
 
-Suppose we have a deep object tree with multiple references and cycles `root`
-Now we want to make a copy of a `single` or `multiple` objects embedded in
-that tree and have all the objects that somehow point to that objects be
-copied as well.
-
-
 Also note that the copy correctly preserves the objects inheritance and
 hidden/accessor properties.
 ```js
-var copies = cow({root: root, single: single});
-copies[0]; // is the new root node
-copies[1]; // is the copy of the single leaf object
+function Test() { this.child = {}; }
+var obj = new Test(); // provided a normal js object, which
+obj.child.obj = obj; // can contain cycles
+obj.child2 = obj.child // and references
 
-var copies = cow({root: root, multiple: [leaf1, leaf2]});
-copies[1][0]; // is a copy of leaf1
-copies[1][1]; // is a copy of leaf2
+var cow = new Cow(obj);
+var proxy = cow.proxy;
+
+// the proxy has all the properties of obj!
+proxy.child.obj === proxy;
+proxy.child2 === proxy.child;
+
+// we can write new properties
+proxy.child3 = proxy; // even create new cycles!
+
+// convert the proxy back to plain object:
+var finished = cow.finish();
+finished.child3 === finished;
+finished.child.obj === finished;
+finished.child === finished.child2;
+
+// and it has left the original object untouched:
+obj !== finished;
+obj.child !== finished.child;
 ```
 
 ## License

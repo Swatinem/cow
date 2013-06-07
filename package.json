@@ -3,11 +3,12 @@
   "description": "copy on write deep, cyclic js objects",
   "keywords": ["cow", "copy on write", "copy-on-write", "copy"],
   "main": "./index",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "maintainers": [
     "Arpad Borsos <arpad.borsos@googlemail.com> (http://swatinem.de)"
   ],
   "dependencies": {
+    "harmony-proxy": "~ 0.0.1"
   },
   "devDependencies": {
     "mocha": "*",
