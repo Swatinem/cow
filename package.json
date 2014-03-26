@@ -11,14 +11,14 @@
     "harmony-proxy": "~ 0.0.2"
   },
   "devDependencies": {
+    "istanbul": "*",
     "mocha": "*",
     "should": "*",
-    "jscoverage": "*",
     "coveralls": "*",
-    "mocha-lcov-reporter": "*"
+    "jshint": "*"
   },
   "scripts": {
-    "test": "make test && make test-coveralls"
+    "test": "make test-coveralls"
   },
   "repository": "git://github.com/Swatinem/cow.git",
   "license": "LGPLv3"

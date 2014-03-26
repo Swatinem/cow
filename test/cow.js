@@ -50,7 +50,7 @@ describe('Cow', function () {
 	});
 	it('should copy the prototype chain correctly', function () {
 		function T() {}
-		var o = new T;
+		var o = new T();
 		var c = new Cow(o);
 		var p = c.proxy;
 		p.new = 'new';
@@ -142,7 +142,7 @@ describe('Cow', function () {
 		function T2() {}
 		T.prototype = Object.create(T2.prototype);
 		T2.prototype.method = function T2_method() {};
-		var o = new T;
+		var o = new T();
 		o.method.should.equal(T2.prototype.method);
 		var c = new Cow(o);
 		var p = c.proxy;
@@ -154,7 +154,7 @@ describe('Cow', function () {
 		T.prototype.toString = function T_toString() {
 			return 'foo';
 		};
-		var o = new T;
+		var o = new T();
 		var c = new Cow(o);
 		var p = c.proxy;
 		p.toString().should.equal('foo');
